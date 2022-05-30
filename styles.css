@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-main: rgb(74, 75, 79);
+  --color-buttons-a: rgb(33, 34, 36);
+  --color-button-text-a: rgb(200, 197, 195);
+  --color-button-text-b: #27ed0d;
+  --color-shadow: rgba(12, 14, 19, 0.457);
+  --color-highlight: rgba(116, 123, 136, 0.203);
+  --color-emission-a: rgba(201, 201, 201, 0.559);
+  --color-emission-b: rgb(23, 255, 147);
+}
+
+body {
+  background-color: var(--color-main);
+  font-family: "Work Sans", sans-serif;
+  user-select: none;
+}
+
+.calc-body {
+  width: 540px;
+  height: 900px;
+  background-color: var(--color-main);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 6px 6px 12px var(--color-shadow),
+    -6px -6px 12px var(--color-highlight);
+}
+
+.main-display {
+  display: flex;
+  width: 520px;
+  height: 150px;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: flex-end;
+  align-items: center;
+  text-align: end;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: var(--color-button-text-a);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: inset 3px 3px 8px var(--color-shadow),
+    inset -3px -3px 8px var(--color-highlight);
+  inline-size: 520px;
+  overflow: break-word;
+}
+
+.secondary-display {
+  display: flex;
+  width: 520px;
+  height: 80px;
+  position: fixed;
+  top: 180px;
+  left: 50%;
+  justify-content: flex-end;
+  align-items: center;
+  transform: translateX(-50%);
+  text-align: end;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--color-button-text-a);
+  border-radius: 10px;
+  box-shadow: inset 3px 3px 8px var(--color-shadow),
+    inset -3px -3px 8px var(--color-highlight);
+    padding: 10px;
+}
+
+.utility-bar {
+  width: 520px;
+  height: 60px;
+  position: fixed;
+  top: 270px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  border-bottom: solid 2px var(--color-shadow);
+  justify-content: flex-end;
+}
+
+#del {
+  height: 50px;
+  width: 60px;
+  background-color: var(--color-main);
+  color: var(--color-button-text-b);
+  border: none;
+  font-size: 3rem;
+  transition: all 0.2s ease;
+  text-shadow: 3px 3px 8px var(--color-shadow),
+    -3px -3px 8px var(--color-highlight);
+}
+
+#del :hover {
+  cursor: pointer;
+  color: var(--color-emission-b);
+  font-size: 3.3rem;
+  font-weight: bolder;
+}
+
+.keyboard {
+  width: 520px;
+  height: 540px;
+  position: fixed;
+  top: 340px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+}
+
+.keyboard .numbers {
+  border: none;
+  font-size: 3rem;
+  border-radius: 5%;
+  background-color: var(--color-main);
+  color: var(--color-button-text-a);
+  transition: all 0.2s ease;
+  font-family: "Work Sans", sans-serif;
+  box-shadow: 3px 3px 8px var(--color-shadow),
+    -3px -3px 8px var(--color-highlight);
+}
+
+.keyboard .numbers:hover {
+  cursor: pointer;
+  text-shadow: 0 0 20px white;
+  font-weight: bolder;
+  color: white;
+  box-shadow: inset 0 0 20px var(--color-emission-a);
+}
+
+.keyboard .operations {
+  border: none;
+  font-size: 3rem;
+  border-radius: 5%;
+  background-color: var(--color-main);
+  color: var(--color-button-text-b);
+  transition: all 0.2s ease;
+  font-family: "Work Sans", sans-serif;
+  box-shadow: 3px 3px 8px var(--color-shadow),
+    -3px -3px 8px var(--color-highlight);
+}
+
+
+.keyboard .operations:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 20px var(--color-emission-a);
+  text-shadow: 0 0 20px white;
+  color: var(--color-emission-b);
+}
+
+#equal {
+  cursor: pointer;
+  background-color: var(--color-button-text-b);
+  color: var(--color-main);
+  transition: all 0.2s ease;
+}
+
+#equal :hover{
+  background-color: var(--color-emission-b);
+  color: var(--color-main);
+  transition: all 0.2s ease;
+}
